@@ -6,6 +6,10 @@ class Admin_Ajax_Required_Plugins
     function __construct()
     {
         if (is_admin() && defined('DOING_AJAX') && DOING_AJAX === TRUE && isset($_REQUEST['action'])) {
+            /*
+             * Edit like this.
+             * 'action_name' => 'plugin_slug' or 'action_name' => array('plugin1_slug', 'plugin2_slug')
+             */
             $this->action_map = array(
                 'dbmembers_action' => 'danbi-members',
                 'dbmembers_action2' => array('wp-members', 'danbi-members')
